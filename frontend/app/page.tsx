@@ -1,69 +1,200 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <header className="site-header">
+        <nav className="navbar">
+          <a className="brand" href="#inicio" aria-label="TursArg - Inicio">
+            TursArg
+          </a>
+
+          <div className="nav-links">
+            <a href="#explorar">Explorar</a>
+            <a href="#rutas">Rutas</a>
+            <a href="#experiencias">Experiencias</a>
+            <a href="#jugando">Descubrí jugando</a>
+            <a href="#datos-utiles">Datos útiles</a>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section className="hero" id="inicio">
+          <div className="hero-content">
+            <span className="eyebrow">DESCUBRÍ CATAMARCA</span>
+
+            <h1>
+              Catamarca,
+              <br />
+              increíble por naturaleza.
+            </h1>
+
+            <p className="hero-description">
+              Explorá paisajes, cultura, historia y experiencias para descubrir
+              la provincia a tu manera.
+            </p>
+
+            <div className="hero-actions">
+              <a className="button button-primary" href="#explorar">
+                Explorar lugares
+              </a>
+
+              <a className="button button-secondary" href="#jugando">
+                Descubrir jugando
+              </a>
+            </div>
+          </div>
+
+          <div className="hero-placeholder" aria-hidden="true">
+            <span>CATAMARCA</span>
+            <strong>Montaña · Cultura · Aventura</strong>
+          </div>
+        </section>
+
+        <section className="section now-section" id="experiencias">
+          <div className="section-heading">
+            <span className="eyebrow">AHORA EN CATAMARCA</span>
+            <h2>La ciudad también se descubre por lo que está pasando.</h2>
+            <p>
+              Festivales, música, teatro, ferias, muestras y encuentros para
+              incorporar la cultura de Catamarca a tu recorrido.
+            </p>
+          </div>
+
+          <div className="event-feature">
+            <div className="event-date">
+              <span>AGENDA</span>
+              <strong>Cultural</strong>
+            </div>
+
+            <div className="event-content">
+              <span className="event-label">EVENTOS EN CAPITAL</span>
+              <h3>Descubrí qué hacer durante tu estadía.</h3>
+              <p>
+                Explorá actividades culturales y descubrí qué lugares podés
+                incorporar antes o después de cada evento.
+              </p>
+
+              <div className="event-tags">
+                <span>Música</span>
+                <span>Teatro</span>
+                <span>Ferias</span>
+                <span>Festivales</span>
+                <span>Muestras</span>
+              </div>
+
+              <button type="button">Explorar agenda</button>
+            </div>
+          </div>
+        </section>
+
+        <section className="section capital-section" id="explorar">
+          <div className="section-heading">
+            <span className="eyebrow">EXPLORÁ CAPITAL</span>
+            <h2>Una ciudad, distintas formas de recorrerla.</h2>
+            <p>
+              Empezamos por San Fernando del Valle de Catamarca para conectar
+              lugares, cultura, actividades y recorridos en una misma experiencia.
+            </p>
+          </div>
+
+          <div className="category-grid">
+            <article>
+              <span>01</span>
+              <h3>Cultura</h3>
+              <p>Museos, espacios culturales, música, teatro y expresiones locales.</p>
+            </article>
+
+            <article>
+              <span>02</span>
+              <h3>Historia</h3>
+              <p>Patrimonio, arquitectura y lugares que cuentan la historia de la ciudad.</p>
+            </article>
+
+            <article>
+              <span>03</span>
+              <h3>Naturaleza</h3>
+              <p>Paisajes y espacios naturales para descubrir cerca de la ciudad.</p>
+            </article>
+
+            <article>
+              <span>04</span>
+              <h3>Artesanías</h3>
+              <p>Textiles, producción artesanal y saberes vinculados a la identidad local.</p>
+            </article>
+
+            <article>
+              <span>05</span>
+              <h3>Gastronomía</h3>
+              <p>Sabores y experiencias gastronómicas para sumar al recorrido.</p>
+            </article>
+          </div>
+        </section>
+
+        <section className="route-section" id="rutas">
+          <div>
+            <span className="eyebrow">MI RECORRIDO</span>
+            <h2>Catamarca según tu viaje.</h2>
+            <p>
+              Elegí desde dónde partís, cuánto tiempo tenés y qué te interesa.
+              TursArg te ayudará a descubrir alternativas para tu recorrido.
+            </p>
+          </div>
+
+          <div className="route-builder">
+            <div>
+              <span>Desde</span>
+              <strong>¿Dónde estás?</strong>
+            </div>
+
+            <div>
+              <span>Tiempo</span>
+              <strong>¿Cuánto tenés?</strong>
+            </div>
+
+            <div>
+              <span>Intereses</span>
+              <strong>¿Qué buscás?</strong>
+            </div>
+
+            <button type="button">Armar recorrido</button>
+          </div>
+        </section>
+
+        <section className="section discovery-section" id="jugando">
+          <div className="section-heading">
+            <span className="eyebrow">DESCUBRÍ JUGANDO</span>
+            <h2>Conocer también puede ser un desafío.</h2>
+            <p>
+              Trivias, paisajes y desafíos para aprender sobre Catamarca
+              mientras la explorás.
+            </p>
+          </div>
+
+          <div className="challenge-card">
+            <span>DESAFÍO 01</span>
+            <h3>¿Cuánto conocés de Catamarca?</h3>
+            <p>
+              Poné a prueba tus conocimientos sobre su geografía, cultura e
+              historia.
+            </p>
+            <button type="button">Comenzar desafío</button>
+          </div>
+        </section>
+
+        <section className="useful-section" id="datos-utiles">
+          <span className="eyebrow">ANTES DE VIAJAR</span>
+          <h2>Datos útiles para tu recorrido.</h2>
+          <p>
+            Información práctica para acompañarte antes y durante tu viaje por
+            Catamarca.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+        </section>
       </main>
-    </div>
+
+      <footer>
+        <strong>TursArg</strong>
+        <p>Descubrí Catamarca. Explorá, aprendé y armá tu recorrido.</p>
+      </footer>
+    </>
   );
 }

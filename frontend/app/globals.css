@@ -1,26 +1,736 @@
 @import "tailwindcss";
 
+/* =========================================================
+   TursArg 2026
+   Identidad visual inicial
+   ========================================================= */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4f0e8;
+  --surface: #fffdf8;
+  --foreground: #1e2924;
+  --muted: #68726c;
+
+  --forest: #173d32;
+  --forest-light: #245746;
+  --earth: #b9673f;
+  --sand: #dfc9a7;
+  --line: #d8d2c6;
+
+  --max-width: 1280px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+/* =========================================================
+   Navegación
+   ========================================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(244, 240, 232, 0.94);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+}
+
+.navbar {
+  width: min(100% - 48px, var(--max-width));
+  min-height: 78px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.brand {
+  color: var(--forest);
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #37433d;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--earth);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   Hero
+   ========================================================= */
+
+.hero {
+  width: min(100% - 48px, var(--max-width));
+  min-height: 590px;
+  margin: 0 auto;
+  padding: 60px 0;
+
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 72px;
+}
+
+.hero-content {
+  max-width: 660px;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+
+  color: var(--earth);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.hero h1 {
+  max-width: 760px;
+  margin: 0;
+
+  color: var(--forest);
+  font-size: clamp(3.5rem, 6vw, 6.5rem);
+  line-height: 0.94;
+  letter-spacing: -0.065em;
+}
+
+.hero-description {
+  max-width: 590px;
+  margin: 30px 0 0;
+
+  color: var(--muted);
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 38px;
+}
+
+.button {
+  min-height: 52px;
+  padding: 0 24px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.92rem;
+  font-weight: 700;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  background: var(--forest);
+  color: #ffffff;
+}
+
+.button-primary:hover {
+  background: var(--forest-light);
+}
+
+.button-secondary {
+  border-color: var(--forest);
+  color: var(--forest);
+}
+
+.button-secondary:hover {
+  background: var(--forest);
+  color: #ffffff;
+}
+
+/*
+  Más adelante este bloque será reemplazado por fotografía,
+  mapa o una composición visual propia de Catamarca.
+*/
+
+.hero-placeholder {
+  min-height: 440px;
+  padding: 42px;
+  border-radius: 32px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(circle at 70% 25%,
+      rgba(255, 220, 160, 0.42),
+      transparent 28%),
+    linear-gradient(145deg,
+      #d69a62 0%,
+      #a45e3e 35%,
+      #4b5140 68%,
+      #173d32 100%);
+
+  box-shadow: 0 30px 70px rgba(37, 48, 42, 0.15);
+}
+
+.hero-placeholder span {
+  margin-bottom: 8px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.hero-placeholder strong {
+  max-width: 350px;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  line-height: 1.05;
+}
+
+/* =========================================================
+   Secciones generales
+   ========================================================= */
+
+.section {
+  width: min(100% - 48px, var(--max-width));
+  margin: 0 auto;
+  padding: 110px 0;
+}
+
+.section-heading {
+  max-width: 700px;
+  margin-bottom: 52px;
+}
+
+.section-heading h2,
+.route-section h2,
+.useful-section h2 {
+  margin: 0;
+
+  color: var(--forest);
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.section-heading p,
+.route-section p,
+.useful-section p {
+  max-width: 650px;
+  margin: 20px 0 0;
+
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   Ahora en Catamarca
+   ========================================================= */
+
+.now-section {
+  padding-top: 70px;
+}
+
+.event-feature {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 0.42fr 1fr;
+
+  border-radius: 30px;
+  background: var(--forest);
+  color: #ffffff;
+}
+
+.event-date {
+  min-height: 390px;
+  padding: 38px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background:
+    linear-gradient(145deg,
+      rgba(185, 103, 63, 0.92),
+      rgba(125, 71, 48, 0.96));
+}
+
+.event-date span {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.event-date strong {
+  max-width: 240px;
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+}
+
+.event-content {
+  padding: 52px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.event-label {
+  margin-bottom: 18px;
+
+  color: #e3a77b;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.event-content h3 {
+  max-width: 620px;
+  margin: 0;
+
+  font-size: clamp(2rem, 4vw, 3.7rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.event-content p {
+  max-width: 600px;
+  margin: 22px 0 0;
+
+  color: #c7d0cb;
+  line-height: 1.65;
+}
+
+.event-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 28px;
+}
+
+.event-tags span {
+  padding: 8px 13px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+
+  color: #e4e9e6;
+  font-size: 0.78rem;
+}
+
+.event-content button {
+  margin-top: 32px;
+  padding: 14px 21px;
+
+  border: 0;
+  border-radius: 999px;
+
+  cursor: pointer;
+
+  background: #ffffff;
+  color: var(--forest);
+
+  font-weight: 800;
+}
+
+.capital-section {
+  padding-top: 60px;
+}
+
+/* =========================================================
+   Categorías
+   ========================================================= */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid var(--line);
+}
+
+.category-grid article {
+  min-height: 265px;
+  padding: 30px 24px;
+
+  border-right: 1px solid var(--line);
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.category-grid article:first-child {
+  border-left: 1px solid var(--line);
+}
+
+.category-grid article:hover {
+  background: var(--surface);
+  transform: translateY(-5px);
+}
+
+.category-grid article>span {
+  color: var(--earth);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.category-grid h3 {
+  margin: 76px 0 14px;
+
+  color: var(--forest);
+  font-size: 1.35rem;
+}
+
+.category-grid p {
+  margin: 0;
+
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+/* =========================================================
+   Mi recorrido
+   ========================================================= */
+
+.route-section {
+  padding: 100px max(24px, calc((100% - var(--max-width)) / 2));
+
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+
+  background: var(--forest);
+  color: #ffffff;
+}
+
+.route-section .eyebrow {
+  color: #e3a77b;
+}
+
+.route-section h2 {
+  color: #ffffff;
+}
+
+.route-section p {
+  color: #c7d0cb;
+}
+
+.route-builder {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.route-builder>div {
+  padding: 23px 26px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.route-builder span {
+  display: block;
+  margin-bottom: 6px;
+
+  color: #9fb0a8;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.route-builder strong {
+  font-size: 1rem;
+}
+
+.route-builder button {
+  width: 100%;
+  padding: 20px 26px;
+
+  border: 0;
+  cursor: pointer;
+
+  background: var(--earth);
+  color: #ffffff;
+
+  font-weight: 800;
+  text-align: left;
+}
+
+/* =========================================================
+   Descubrí jugando
+   ========================================================= */
+
+.discovery-section {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 90px;
+  align-items: center;
+}
+
+.discovery-section .section-heading {
+  margin-bottom: 0;
+}
+
+.challenge-card {
+  min-height: 350px;
+  padding: 42px;
+  border-radius: 28px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  background: var(--sand);
+}
+
+.challenge-card>span {
+  margin-bottom: auto;
+
+  color: var(--earth);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.challenge-card h3 {
+  max-width: 400px;
+  margin: 40px 0 12px;
+
+  color: var(--forest);
+  font-size: 2rem;
+  line-height: 1.05;
+}
+
+.challenge-card p {
+  max-width: 430px;
+  margin: 0 0 25px;
+
+  color: #5d5b52;
+  line-height: 1.55;
+}
+
+.challenge-card button {
+  align-self: flex-start;
+
+  padding: 13px 20px;
+  border: 0;
+  border-radius: 999px;
+
+  cursor: pointer;
+
+  background: var(--forest);
+  color: #ffffff;
+
+  font-weight: 700;
+}
+
+/* =========================================================
+   Datos útiles
+   ========================================================= */
+
+.useful-section {
+  padding: 100px max(24px, calc((100% - var(--max-width)) / 2));
+  background: #e7ded0;
+}
+
+.useful-section p {
+  max-width: 570px;
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+
+footer {
+  padding: 55px max(24px, calc((100% - var(--max-width)) / 2));
+
+  background: #122d26;
+  color: #ffffff;
+}
+
+footer strong {
+  font-size: 1.4rem;
+}
+
+footer p {
+  margin: 10px 0 0;
+  color: #aebdb6;
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .nav-links {
+    gap: 16px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-placeholder {
+    min-height: 380px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .route-section,
+  .discovery-section {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 760px) {
+  .navbar {
+    width: min(100% - 32px, var(--max-width));
+    min-height: 68px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero,
+  .section {
+    width: min(100% - 32px, var(--max-width));
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 60px 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 15vw, 4.7rem);
+  }
+
+  .hero-placeholder {
+    min-height: 320px;
+    padding: 28px;
+    border-radius: 22px;
+  }
+
+  .section {
+    padding: 75px 0;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-grid article,
+  .category-grid article:first-child {
+    min-height: auto;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .category-grid h3 {
+    margin-top: 38px;
+  }
+
+  .route-section {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .discovery-section {
+    gap: 35px;
+  }
+
+  .challenge-card {
+    min-height: 320px;
+    padding: 30px;
+  }
+
+  .useful-section {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .event-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .event-date {
+    min-height: 210px;
+    padding: 28px;
+  }
+
+  .event-date strong {
+    font-size: 3rem;
+  }
+
+  .event-content {
+    padding: 32px 28px;
+  }
+
+  .now-section {
+    padding-top: 70px;
+  }
+
+  .capital-section {
+    padding-top: 35px;
+  }
 }

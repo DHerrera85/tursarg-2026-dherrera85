@@ -2,6 +2,14 @@
 
 Recuperación y modernización de **TursArg**, proyecto grupal desarrollado originalmente en 2021 durante la Diplomatura Full Stack, dictada por el Instituto Superior Politécnico de Córdoba (ISPC), dependiente del Ministerio de Educación de la Provincia de Córdoba.
 
+### Certificación de la formación
+
+📄 [Ver certificado de Desarrollador Full Stack](./docs/Daniel%20Arturo%20Herrera-certificado-desarrollador-full-stack.pdf)
+
+**Formación:** Desarrollador Full Stack  
+**Duración:** 300 horas  
+**Institución:** Instituto Superior Politécnico de Córdoba (ISPC)
+
 ## Origen del proyecto
 
 La versión original fue desarrollada en el repositorio:

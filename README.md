@@ -6,6 +6,14 @@ Recuperación y modernización de **TursArg**, proyecto grupal desarrollado orig
 
 📄 [Ver certificado de Desarrollador Full Stack](./docs/Daniel%20Arturo%20Herrera-certificado-desarrollador-full-stack.pdf)
 
+<a href="./docs/Daniel%20Arturo%20Herrera-certificado-desarrollador-full-stack.pdf">
+  <img
+    src="./docs/certificado-desarrollador-full-stack-preview.png"
+    alt="Certificado de Desarrollador Full Stack - ISPC"
+    width="360"
+  >
+</a>
+
 **Formación:** Desarrollador Full Stack  
 **Duración:** 300 horas  
 **Institución:** Instituto Superior Politécnico de Córdoba (ISPC)

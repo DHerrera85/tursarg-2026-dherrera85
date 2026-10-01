@@ -1,6 +1,6 @@
 # TursArg 2026
 
-Recuperación y modernización de **TursArg**, proyecto grupal desarrollado originalmente en 2021 durante una Diplomatura Full Stack.
+Recuperación y modernización de **TursArg**, proyecto grupal desarrollado originalmente en 2021 durante la Diplomatura Full Stack, dictada por el Instituto Superior Politécnico de Córdoba (ISPC), dependiente del Ministerio de Educación de la Provincia de Córdoba.
 
 ## Origen del proyecto
 

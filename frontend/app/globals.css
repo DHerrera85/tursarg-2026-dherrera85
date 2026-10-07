@@ -352,6 +352,30 @@ button {
   line-height: 1.65;
 }
 
+.event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-top: 28px;
+}
+
+.event-meta>span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  color: #e4e9e6;
+  font-size: 0.86rem;
+}
+
+.event-meta strong {
+  color: #9fb0a8;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 .event-tags {
   display: flex;
   flex-wrap: wrap;
@@ -369,19 +393,29 @@ button {
   font-size: 0.78rem;
 }
 
-.event-content button {
+.event-content .event-link {
   margin-top: 32px;
   padding: 14px 21px;
 
-  border: 0;
   border-radius: 999px;
 
-  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
   background: #ffffff;
   color: var(--forest);
 
   font-weight: 800;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.event-content .event-link:hover {
+  transform: translateY(-2px);
+  background: var(--sand);
 }
 
 .capital-section {
@@ -609,6 +643,84 @@ footer strong {
 footer p {
   margin: 10px 0 0;
   color: #aebdb6;
+}
+
+/* =========================================================
+   Página de eventos
+   ========================================================= */
+
+.events-page {
+  width: min(100% - 48px, var(--max-width));
+  margin: 0 auto;
+  padding: 70px 0 110px;
+}
+
+.events-page-header {
+  max-width: 850px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 70px;
+
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.back-link:hover {
+  color: var(--earth);
+}
+
+.events-page-header h1 {
+  margin: 0;
+
+  color: var(--forest);
+  font-size: clamp(3rem, 6vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.events-page-header p {
+  max-width: 650px;
+  margin: 28px 0 0;
+
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.events-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 55px 0 40px;
+}
+
+.events-filters button {
+  padding: 11px 18px;
+
+  border: 1px solid var(--line);
+  border-radius: 999px;
+
+  cursor: pointer;
+
+  background: transparent;
+  color: var(--foreground);
+
+  font-weight: 700;
+}
+
+.events-filters button:hover,
+.events-filters button.active {
+  border-color: var(--forest);
+  background: var(--forest);
+  color: #ffffff;
+}
+
+.events-list {
+  display: grid;
+  gap: 30px;
 }
 
 /* =========================================================

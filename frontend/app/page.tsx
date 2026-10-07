@@ -1,3 +1,6 @@
+import EventCard from "../components/EventCard";
+import { eventos } from "../data/eventos";
+
 export default function Home() {
   return (
     <>
@@ -60,31 +63,11 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="event-feature">
-            <div className="event-date">
-              <span>AGENDA</span>
-              <strong>Cultural</strong>
-            </div>
-
-            <div className="event-content">
-              <span className="event-label">EVENTOS EN CAPITAL</span>
-              <h3>Descubrí qué hacer durante tu estadía.</h3>
-              <p>
-                Explorá actividades culturales y descubrí qué lugares podés
-                incorporar antes o después de cada evento.
-              </p>
-
-              <div className="event-tags">
-                <span>Música</span>
-                <span>Teatro</span>
-                <span>Ferias</span>
-                <span>Festivales</span>
-                <span>Muestras</span>
-              </div>
-
-              <button type="button">Explorar agenda</button>
-            </div>
-          </div>
+          {eventos
+            .filter((evento) => evento.destacado)
+            .map((evento) => (
+              <EventCard key={evento.id} evento={evento} />
+            ))}
         </section>
 
         <section className="section capital-section" id="explorar">
